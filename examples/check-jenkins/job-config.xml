@@ -1,0 +1,31 @@
+<flow-definition plugin="workflow-job@1505.vea_4b_20a_4a_495">
+	<actions/>
+	<description/>
+	<keepDependencies>false</keepDependencies>
+	<properties/>
+	<definition class="org.boozallen.plugins.jte.job.AdHocTemplateFlowDefinition" plugin="templating-engine@2.5.3">
+		<configProvider class="org.boozallen.plugins.jte.job.ScmAdHocTemplateFlowDefinitionConfiguration">
+			<scm class="hudson.plugins.git.GitSCM" plugin="git@5.7.0">
+				<configVersion>2</configVersion>
+				<userRemoteConfigs>
+					<hudson.plugins.git.UserRemoteConfig>
+						<url>https://github.com/mjagyo/jenkins-global-configurator.git</url>
+						<credentialsId>github-creds</credentialsId>
+					</hudson.plugins.git.UserRemoteConfig>
+				</userRemoteConfigs>
+				<branches>
+					<hudson.plugins.git.BranchSpec>
+						<name>*/main</name>
+					</hudson.plugins.git.BranchSpec>
+				</branches>
+				<doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+				<submoduleCfg class="empty-list"/>
+				<extensions/>
+			</scm>
+			<pipelineConfigurationPath>pipeline_config.groovy</pipelineConfigurationPath>
+			<pipelineTemplatePath>nodeapp/Jenkinsfile</pipelineTemplatePath>
+		</configProvider>
+	</definition>
+	<triggers/>
+	<disabled>false</disabled>
+</flow-definition>

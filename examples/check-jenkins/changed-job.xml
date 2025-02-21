@@ -1,0 +1,28 @@
+<flow-definition plugin="workflow-job@1505.vea_4b_20a_4a_495">
+<actions/>
+<description/>
+<keepDependencies>false</keepDependencies>
+<properties>
+<jenkins.model.BuildDiscarderProperty>
+<strategy class="hudson.tasks.LogRotator">
+<daysToKeep>-1</daysToKeep>
+<numToKeep>-1</numToKeep>
+<artifactDaysToKeep>-1</artifactDaysToKeep>
+<artifactNumToKeep>-1</artifactNumToKeep>
+<removeLastBuild>false</removeLastBuild>
+</strategy>
+</jenkins.model.BuildDiscarderProperty>
+</properties>
+<definition class="org.boozallen.plugins.jte.job.AdHocTemplateFlowDefinition" plugin="templating-engine@2.5.3">
+<configProvider class="org.boozallen.plugins.jte.job.ConsoleAdHocTemplateFlowDefinitionConfiguration">
+<pipelineConfig>
+<providePipelineConfig>false</providePipelineConfig>
+</pipelineConfig>
+<defaultTemplate>
+<provideDefaultTemplate>false</provideDefaultTemplate>
+</defaultTemplate>
+</configProvider>
+</definition>
+<triggers/>
+<disabled>false</disabled>
+</flow-definition>
